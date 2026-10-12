@@ -44576,6 +44576,7 @@ MonoBehaviour:
   playerHealthSlider: {fileID: 650504263}
   healthText: {fileID: 315606670}
   gameOverPanel: {fileID: 796073292}
+  pausePanel: {fileID: 2099050030}
 --- !u!1 &796073292
 GameObject:
   m_ObjectHideFlags: 0
@@ -124866,7 +124867,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2099050031
 RectTransform:
   m_ObjectHideFlags: 0
