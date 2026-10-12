@@ -9,6 +9,7 @@ public class UIControlller : MonoBehaviour
     [SerializeField] private TMP_Text healthText;
     public GameObject gameOverPanel;
     public GameObject pausePanel;
+    [SerializeField] private TMP_Text timerText;
 
     void Awake()
     {
@@ -27,5 +28,12 @@ public class UIControlller : MonoBehaviour
         playerHealthSlider.maxValue = PlayerController.Instance.playerMaxHealth;
         playerHealthSlider.value = PlayerController.Instance.playerHealth;
         healthText.text = playerHealthSlider.value + " / " + playerHealthSlider.maxValue;
+    }
+
+    public void UpdateTimer(float timer)
+    {
+        float min = Mathf.FloorToInt(timer / 60f);
+        float sec = Mathf.FloorToInt(timer % 60);
+        timerText.text = min + ":" + sec.ToString("00");
     }
 }
