@@ -8,6 +8,10 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float damage;
     [SerializeField] private float health;
+    [SerializeField] private int experienceToGive;
+    [SerializeField] private float pushTime;
+
+    private float pushCounter;
     [SerializeField] private GameObject destroyEffect;
     private Vector3 direction;
 
@@ -24,6 +28,19 @@ public class Enemy : MonoBehaviour
             else
             {
                 spriteRenderer.flipX = false;
+            }
+            //push back
+            if (pushCounter > 0)
+            {
+                pushCounter -= Time.deltaTime;
+                if (moveSpeed > 0)
+                {
+                    moveSpeed = -moveSpeed;
+                }
+                if (pushCounter <= 0)
+                {
+                    moveSpeed = MathF.Abs(moveSpeed);
+                }
             }
             //move to player
             direction = (PlayerController.Instance.transform.position - transform.position).normalized;
@@ -48,10 +65,12 @@ public class Enemy : MonoBehaviour
     {
         health -= damage;
         DamageNumberController.Instance.CreateNumber(damage, transform.position);
+        pushCounter = pushTime;
         if (health <= 0)
         {
             Destroy(gameObject);
             Instantiate(destroyEffect, transform.position, transform.rotation);
+            PlayerController.Instance.GetExperience(experienceToGive);
         }
     }
 }

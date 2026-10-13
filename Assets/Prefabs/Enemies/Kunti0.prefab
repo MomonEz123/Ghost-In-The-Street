@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 7967571228203726929}
   - component: {fileID: 5273652072524617644}
   - component: {fileID: 1028090583341389145}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Kunti0
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,8 +129,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.3064139, y: 1.3956738}
-  m_Size: {x: 1.0877671, y: 1.4360557}
+  m_Offset: {x: 0.29348016, y: 1.325831}
+  m_Size: {x: 1.0618997, y: 1.575741}
   m_Direction: 0
 --- !u!50 &7967571228203726929
 Rigidbody2D:
@@ -197,5 +197,7 @@ MonoBehaviour:
   rb: {fileID: 7967571228203726929}
   moveSpeed: 1
   damage: 3
-  health: 20
+  health: 15
+  experienceToGive: 3
+  pushTime: 0.5
   destroyEffect: {fileID: 1424440251661859640, guid: 1e9553bcf2f64c44795fb45b1be0a6bc, type: 3}
