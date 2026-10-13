@@ -1,25 +1,35 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
     public static PlayerController Instance;
+
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Animator animator;
+
     [SerializeField] private float moveSpeed;
     public Vector3 playerMoveDirection;
+    public Vector3 lastMoveDirection;
     public float playerMaxHealth;
     public float playerHealth;
 
     public int experience;
     public int currentLevel;
     public int maxLevel;
-    public List<int> playerLevels;
+
+    [SerializeField] private List<Weapon> inactiveWeapons;
+    public List<Weapon> activeWeapons;
+    [SerializeField] private List<Weapon> upgradeableWeapons;
+    public List<Weapon> maxLevelWeapons;
 
     private bool isImmune;
     [SerializeField] private float immunityDuration;
     [SerializeField] private float immunityTimer;
+
+    public List<int> playerLevels;
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -34,6 +44,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        lastMoveDirection = new Vector3(0, -1);
         for (int i = playerLevels.Count; i < maxLevel; i++)
         {
             playerLevels.Add(Mathf.CeilToInt(playerLevels[playerLevels.Count - 1] * 1.1f + 15));
@@ -41,6 +52,7 @@ public class PlayerController : MonoBehaviour
         playerHealth = playerMaxHealth;
         UIControlller.Instance.UpdateHealthSlider();
         UIControlller.Instance.UpdateExperienceSlider();
+        AddWeapon(Random.Range(0, inactiveWeapons.Count));
     }
 
     // Update is called once per frame
@@ -50,16 +62,16 @@ public class PlayerController : MonoBehaviour
         float inputY = Input.GetAxisRaw("Vertical");
         playerMoveDirection = new Vector3(inputX, inputY).normalized;
 
-        animator.SetFloat("moveX", inputX);
-        animator.SetFloat("moveY", inputY);
-
         if (playerMoveDirection == Vector3.zero)
         {
             animator.SetBool("moving", false);
         }
-        else
+        else if (Time.timeScale != 0)
         {
             animator.SetBool("moving", true);
+            animator.SetFloat("moveX", inputX);
+            animator.SetFloat("moveY", inputY);
+            lastMoveDirection = playerMoveDirection;
         }
 
         if (immunityTimer > 0)
@@ -108,5 +120,63 @@ public class PlayerController : MonoBehaviour
         experience -= playerLevels[currentLevel - 1];
         currentLevel++;
         UIControlller.Instance.UpdateExperienceSlider();
+        //UIControlller.Instance.levelUpButtons[0].ActivateButton(activeWeapon);
+
+        upgradeableWeapons.Clear();
+
+        if (activeWeapons.Count > 0)
+        {
+            upgradeableWeapons.AddRange(activeWeapons);
+        }
+        if (inactiveWeapons.Count > 0)
+        {
+            upgradeableWeapons.AddRange(inactiveWeapons);
+        }
+        for (int i = 0; i < UIControlller.Instance.levelUpButtons.Length; i++)
+        {
+            if (upgradeableWeapons.ElementAtOrDefault(i) != null)
+            {
+                UIControlller.Instance.levelUpButtons[i].ActivateButton(upgradeableWeapons[i]);
+                UIControlller.Instance.levelUpButtons[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                UIControlller.Instance.levelUpButtons[i].gameObject.SetActive(false);
+            }
+        }
+
+        UIControlller.Instance.LevelUpPanelOpen();
+    }
+
+    private void AddWeapon(int index)
+    {
+        activeWeapons.Add(inactiveWeapons[index]);
+        inactiveWeapons[index].gameObject.SetActive(true);
+        inactiveWeapons.RemoveAt(index);
+    }
+
+    public void ActivateWeapon(Weapon weapon)
+    {
+        weapon.gameObject.SetActive(true);
+        activeWeapons.Add(weapon);
+        inactiveWeapons.Remove(weapon);
+    }
+
+    public void IncreaseMaxHealth(int value)
+    {
+        playerMaxHealth += value;
+        playerHealth = playerMaxHealth;
+        UIControlller.Instance.UpdateHealthSlider();
+
+        UIControlller.Instance.LevelUpPanelClose();
+        //AudioController.Instance.PlaySound(AudioController.Instance.selectUpgrade);
+    }
+
+    public void IncreaseMovementSpeed(float multiplier)
+    {
+        moveSpeed *= multiplier;
+
+        UIControlller.Instance.LevelUpPanelClose();
+        //AudioController.Instance.PlaySound(AudioController.Instance.selectUpgrade);
     }
 }

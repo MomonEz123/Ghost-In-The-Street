@@ -11,7 +11,10 @@ public class UIControlller : MonoBehaviour
     [SerializeField] private TMP_Text experienceText;
     public GameObject gameOverPanel;
     public GameObject pausePanel;
+    public GameObject levelUpPanel;
     [SerializeField] private TMP_Text timerText;
+
+    public LevelUpButton[] levelUpButtons;
 
     void Awake()
     {
@@ -31,6 +34,7 @@ public class UIControlller : MonoBehaviour
         playerHealthSlider.value = PlayerController.Instance.playerHealth;
         healthText.text = playerHealthSlider.value + " / " + playerHealthSlider.maxValue;
     }
+
     public void UpdateExperienceSlider()
     {
         playerExperienceSlider.maxValue = PlayerController.Instance.playerLevels[PlayerController.Instance.currentLevel - 1];
@@ -41,7 +45,20 @@ public class UIControlller : MonoBehaviour
     public void UpdateTimer(float timer)
     {
         float min = Mathf.FloorToInt(timer / 60f);
-        float sec = Mathf.FloorToInt(timer % 60);
+        float sec = Mathf.FloorToInt(timer % 60f);
+
         timerText.text = min + ":" + sec.ToString("00");
+    }
+
+    public void LevelUpPanelOpen()
+    {
+        levelUpPanel.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void LevelUpPanelClose()
+    {
+        levelUpPanel.SetActive(false);
+        Time.timeScale = 1f;
     }
 }
