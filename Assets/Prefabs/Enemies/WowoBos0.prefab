@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.2533321, y: 1.16, z: 0}
-  m_LocalScale: {x: 1.5, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -133,6 +133,7 @@ MonoBehaviour:
   rb: {fileID: 4359284247275821690}
   moveSpeed: 1
   damage: 4
+  health: 40
   destroyEffect: {fileID: 1424440251661859640, guid: 1e9553bcf2f64c44795fb45b1be0a6bc, type: 3}
 --- !u!50 &4359284247275821690
 Rigidbody2D:

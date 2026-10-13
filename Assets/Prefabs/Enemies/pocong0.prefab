@@ -111,6 +111,7 @@ MonoBehaviour:
   rb: {fileID: 1469984037873426631}
   moveSpeed: 1.5
   damage: 1
+  health: 10
   destroyEffect: {fileID: 1424440251661859640, guid: 1e9553bcf2f64c44795fb45b1be0a6bc, type: 3}
 --- !u!50 &1469984037873426631
 Rigidbody2D:
