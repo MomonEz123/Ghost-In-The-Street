@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
     public float playerMaxHealth;
     public float playerHealth;
 
+    private bool isImmune;
+    [SerializeField] private float immunityDuration;
+    [SerializeField] private float immunityTimer;
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -48,6 +51,14 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("moving", true);
         }
 
+        if (immunityTimer > 0)
+        {
+            immunityTimer -= Time.deltaTime;
+        }
+        else
+        {
+            isImmune = false;
+        }
     }
 
     void FixedUpdate()
@@ -57,12 +68,17 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        playerHealth -= damage;
-        UIControlller.Instance.UpdateHealthSlider();
-        if (playerHealth <= 0)
+        if (!isImmune)
         {
-            gameObject.SetActive(false);
-            GameManager.Instance.GameOver();
+            isImmune = true;
+            immunityTimer = immunityDuration;
+            playerHealth -= damage;
+            UIControlller.Instance.UpdateHealthSlider();
+            if (playerHealth <= 0)
+            {
+                gameObject.SetActive(false);
+                GameManager.Instance.GameOver();
+            }
         }
     }
 }
