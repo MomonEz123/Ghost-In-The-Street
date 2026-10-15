@@ -227,6 +227,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2591a1f475d01a941b20ac94d3f405c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  gameTime: 0
+  gameActive: 0
 --- !u!4 &226197004
 Transform:
   m_ObjectHideFlags: 0
@@ -279,7 +281,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -179.2}
+  m_AnchoredPosition: {x: 0, y: -145}
   m_SizeDelta: {x: 280, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &366770211
@@ -432,7 +434,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.009315491, y: 53}
+  m_AnchoredPosition: {x: 0, y: 120}
   m_SizeDelta: {x: 876.69, y: 139.52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &511955556
@@ -569,7 +571,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.009315491, y: 129}
+  m_AnchoredPosition: {x: 0, y: 235}
   m_SizeDelta: {x: 876.69, y: 139.52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &518911120
@@ -1360,7 +1362,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -68.6}
+  m_AnchoredPosition: {x: 0, y: -20}
   m_SizeDelta: {x: 280, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &2053724462
