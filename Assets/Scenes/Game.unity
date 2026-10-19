@@ -756,51 +756,51 @@ MonoBehaviour:
     description: Increased Range
   - cooldown: 5
     duration: 3
-    damage: 3
+    damage: 2
     range: 1.2
-    speed: 0.5
+    speed: 0.4
     amount: 0
-    description: Final
+    description: Damage +1
   - cooldown: 5
     duration: 3
     damage: 3
     range: 1.2
-    speed: 0.5
+    speed: 0.4
     amount: 0
-    description: Final
-  - cooldown: 5
+    description: Reduce cooldown
+  - cooldown: 4
     duration: 3
     damage: 3
     range: 1.2
-    speed: 0.5
+    speed: 0.4
     amount: 0
-    description: Final
-  - cooldown: 5
+    description: Increased range
+  - cooldown: 4
     duration: 3
     damage: 3
-    range: 1.2
-    speed: 0.5
+    range: 1.4
+    speed: 0.4
     amount: 0
-    description: Final
-  - cooldown: 5
+    description: Faster damage
+  - cooldown: 4
     duration: 3
     damage: 3
-    range: 1.2
-    speed: 0.5
+    range: 1.4
+    speed: 0.3
     amount: 0
-    description: Final
-  - cooldown: 5
+    description: Increased range
+  - cooldown: 4
     duration: 3
     damage: 3
-    range: 1.2
-    speed: 0.5
+    range: 1.6
+    speed: 0.3
     amount: 0
-    description: Final
-  - cooldown: 5
+    description: Damage +1
+  - cooldown: 4
     duration: 3
-    damage: 3
-    range: 1.2
-    speed: 0.5
+    damage: 4
+    range: 1.6
+    speed: 0.3
     amount: 0
     description: Final
   weaponImage: {fileID: 2389193319765324094, guid: 498c7836857d6a24892976571b903f21, type: 3}
@@ -4075,6 +4075,143 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 430805961}
+  m_CullTransparentMesh: 1
+--- !u!1 &477547329
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 477547330}
+  - component: {fileID: 477547332}
+  - component: {fileID: 477547331}
+  m_Layer: 5
+  m_Name: Name Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &477547330
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477547329}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1697752466}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -52, y: -49.5}
+  m_SizeDelta: {x: 0, y: -1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &477547331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477547329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Speed +20%
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: d86bd7499eff12f4ba2284fc3a35a9b3, type: 2}
+  m_sharedMaterial: {fileID: 5006950994916734298, guid: d86bd7499eff12f4ba2284fc3a35a9b3, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 25
+  m_fontSizeBase: 25
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 9.850815, y: 22.17723, z: 9.147209, w: 226.76497}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &477547332
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477547329}
   m_CullTransparentMesh: 1
 --- !u!1 &480002444
 GameObject:
@@ -45736,6 +45873,7 @@ RectTransform:
   - {fileID: 1457986874}
   - {fileID: 362905784}
   - {fileID: 1471434368}
+  - {fileID: 1697752466}
   m_Father: {fileID: 776915454}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -45950,11 +46088,11 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 735674213}
   - {fileID: 650504262}
   - {fileID: 47216441}
   - {fileID: 796073293}
   - {fileID: 2099050031}
-  - {fileID: 735674213}
   - {fileID: 272055636}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -46024,7 +46162,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 396165715
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &776915458
 MonoBehaviour:
@@ -46753,8 +46891,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 360949362}
-  - {fileID: 1261510893}
   - {fileID: 1817240028}
+  - {fileID: 1261510893}
   m_Father: {fileID: 1354775700}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1098208605
@@ -47080,7 +47218,63 @@ MonoBehaviour:
     range: 1
     speed: 6
     amount: 3
-    description: 4 rock
+    description: 4 Rock
+  - cooldown: 0.9
+    duration: 4
+    damage: 4
+    range: 1
+    speed: 6
+    amount: 4
+    description: 5 Rock
+  - cooldown: 0.9
+    duration: 4
+    damage: 4
+    range: 1
+    speed: 6
+    amount: 5
+    description: 6 Rock
+  - cooldown: 0.9
+    duration: 4
+    damage: 4
+    range: 1
+    speed: 6
+    amount: 6
+    description: 7 Rock
+  - cooldown: 0.9
+    duration: 4
+    damage: 4
+    range: 1
+    speed: 6
+    amount: 7
+    description: 8 Rock
+  - cooldown: 0.9
+    duration: 4
+    damage: 4
+    range: 1
+    speed: 6
+    amount: 8
+    description: Faster rock
+  - cooldown: 0.8
+    duration: 5
+    damage: 4
+    range: 1
+    speed: 6
+    amount: 8
+    description: Stronger throwing
+  - cooldown: 0.8
+    duration: 5
+    damage: 4
+    range: 1
+    speed: 8
+    amount: 8
+    description: Rock barrage
+  - cooldown: 0.2
+    duration: 5
+    damage: 4
+    range: 1
+    speed: 9
+    amount: 4
+    description: Final
   weaponImage: {fileID: 7331315201791160908, guid: 9d30c602a091b244cb0848c1041123b1, type: 3}
   basicDescription: Directional Weapon
   prefab: {fileID: 8321578810509695975, guid: 862f6af75e2dee741a86623e02d8685f, type: 3}
@@ -116286,7 +116480,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   rb: {fileID: 1354775701}
   animator: {fileID: 1354775698}
-  moveSpeed: 2
+  moveSpeed: 2.7
   playerMoveDirection: {x: 0, y: 0, z: 0}
   lastMoveDirection: {x: 0, y: 0, z: 0}
   playerMaxHealth: 10
@@ -117053,6 +117247,156 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1603699003}
   m_CullTransparentMesh: 1
+--- !u!1 &1697752465
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1697752466}
+  - component: {fileID: 1697752470}
+  - component: {fileID: 1697752469}
+  - component: {fileID: 1697752468}
+  - component: {fileID: 1697752467}
+  m_Layer: 5
+  m_Name: Speed
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1697752466
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697752465}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 477547330}
+  - {fileID: 1889617140}
+  m_Father: {fileID: 735674213}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 450, y: 206}
+  m_SizeDelta: {x: 260, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1697752467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697752465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e8ce3c6be36283439764991d28a1b21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelUpButton
+  weaponName: {fileID: 477547331}
+  weaponDescription: {fileID: 0}
+  weaponIcon: {fileID: 1889617141}
+--- !u!114 &1697752468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697752465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1697752469}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1354775702}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: IncreaseMovementSpeed
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 1.2
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1697752469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697752465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 5628342760113990661, guid: 6a605fe3aba574a41b3bc274e2ec9594, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1697752470
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697752465}
+  m_CullTransparentMesh: 1
 --- !u!1 &1698284068
 GameObject:
   m_ObjectHideFlags: 0
@@ -117181,27 +117525,165 @@ MonoBehaviour:
   - cooldown: 5
     duration: 4
     damage: 2
-    range: 2
+    range: 1.5
     speed: 3
     amount: 1
     description: + 1 Spin
   - cooldown: 5
     duration: 4
     damage: 2
-    range: 3
+    range: 1.5
     speed: 2.6
     amount: 2
     description: + 1 Spin
   - cooldown: 5
     duration: 4
     damage: 2
-    range: 4
+    range: 1.5
     speed: 2.2
     amount: 3
     description: + 1 Damage
+  - cooldown: 5
+    duration: 4
+    damage: 3
+    range: 1.5
+    speed: 2.2
+    amount: 3
+    description: + 2 Spin
+  - cooldown: 5
+    duration: 4
+    damage: 3
+    range: 1.5
+    speed: 1.5
+    amount: 5
+    description: + 1 Spin
+  - cooldown: 5
+    duration: 4
+    damage: 4
+    range: 1.5
+    speed: 1.5
+    amount: 5
+    description: + 1 Spin
+  - cooldown: 5
+    duration: 4
+    damage: 4
+    range: 1.5
+    speed: 1.4
+    amount: 6
+    description: + 1 Spin
+  - cooldown: 5
+    duration: 4
+    damage: 4
+    range: 1.5
+    speed: 1.3
+    amount: 7
+    description: + 1 Spin
+  - cooldown: 5
+    duration: 4
+    damage: 4
+    range: 1.5
+    speed: 1.2
+    amount: 8
+    description: + 1 Spin
+  - cooldown: 5
+    duration: 4
+    damage: 5
+    range: 1.5
+    speed: 1.2
+    amount: 8
+    description: + 1 Spin
+  - cooldown: 5
+    duration: 4
+    damage: 5
+    range: 1.5
+    speed: 1.1
+    amount: 9
+    description: + 1 Spin
+  - cooldown: 5
+    duration: 4
+    damage: 5
+    range: 1.5
+    speed: 1
+    amount: 10
+    description: Final
   weaponImage: {fileID: -5491044007605387990, guid: 2d441c85a09c8084fa108a873b203395, type: 3}
   basicDescription: Spin Weapon
   prefab: {fileID: 4900198723711197538, guid: b673da6b144bb9c46b00c2cb3c921d10, type: 3}
+--- !u!1 &1889617139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1889617140}
+  - component: {fileID: 1889617142}
+  - component: {fileID: 1889617141}
+  m_Layer: 5
+  m_Name: Weapon Icon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1889617140
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889617139}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1697752466}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -2.9}
+  m_SizeDelta: {x: 120, y: 120}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1889617141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889617139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -917844336, guid: 1c4bd00266cac5b44b09851795e01a36, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1889617142
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889617139}
+  m_CullTransparentMesh: 1
 --- !u!1 &1896136544
 GameObject:
   m_ObjectHideFlags: 0
@@ -128171,18 +128653,18 @@ MonoBehaviour:
   waves:
   - enemyPrefab: {fileID: 1919067550645508430, guid: 80707d81ffd229242a9a5c3004850965, type: 3}
     spawnTimer: 0
-    spawnInterval: 3
-    enemiesPerWave: 5
+    spawnInterval: 0.9
+    enemiesPerWave: 30
     spawnedEnemyCount: 0
   - enemyPrefab: {fileID: 7079389103746446157, guid: b28ce9fc227e37747a1ace96008c8c5c, type: 3}
     spawnTimer: 0
-    spawnInterval: 3
-    enemiesPerWave: 5
+    spawnInterval: 1
+    enemiesPerWave: 30
     spawnedEnemyCount: 0
   - enemyPrefab: {fileID: 6700851168745751904, guid: 258c1037ed8f3d44d808f7805d9e39c5, type: 3}
     spawnTimer: 0
-    spawnInterval: 3
-    enemiesPerWave: 5
+    spawnInterval: 1
+    enemiesPerWave: 30
     spawnedEnemyCount: 0
   - enemyPrefab: {fileID: 3512765877648010108, guid: d1cf7e6ff96472446b14bf104b8f1d39, type: 3}
     spawnTimer: 0
