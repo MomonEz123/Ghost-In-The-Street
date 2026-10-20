@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         UIControlller.Instance.gameOverPanel.SetActive(true);
+        AudioController.Instance.PlaySound(AudioController.Instance.gameOver);
     }
 
     public void Restart()

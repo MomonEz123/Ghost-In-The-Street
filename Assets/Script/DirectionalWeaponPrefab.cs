@@ -17,7 +17,7 @@ public class DirectionalWeaponPrefab : MonoBehaviour
         rb.linearVelocity = new Vector3(
             direction.x * weapon.stats[weapon.weaponLevel].speed + randomAngle, direction.y * weapon.stats[weapon.weaponLevel].speed + randomAngle);
         //Destroy(gameObject, weapon.stats[weapon.weaponLevel].duration);
-        //AudioController.Instance.PlaySound(AudioController.Instance.directionalWeaponSpawn);
+        AudioController.Instance.PlaySound(AudioController.Instance.directionalWeaponSpawn);
     }
 
 
@@ -57,7 +57,7 @@ public class DirectionalWeaponPrefab : MonoBehaviour
             if (enemy != null)
             {
                 enemy.TakeDamage(weapon.stats[weapon.weaponLevel].damage);
-                // AudioController.Instance.PlaySound(AudioController.Instance.directionalWeaponHit);
+                AudioController.Instance.PlaySound(AudioController.Instance.directionalWeaponHit);
             }
         }
     }

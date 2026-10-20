@@ -169,7 +169,7 @@ public class PlayerController : MonoBehaviour
         UIControlller.Instance.UpdateHealthSlider();
 
         UIControlller.Instance.LevelUpPanelClose();
-        //AudioController.Instance.PlaySound(AudioController.Instance.selectUpgrade);
+        AudioController.Instance.PlaySound(AudioController.Instance.selectUpgrade);
     }
 
     public void IncreaseMovementSpeed(float multiplier)
@@ -177,6 +177,6 @@ public class PlayerController : MonoBehaviour
         moveSpeed *= multiplier;
 
         UIControlller.Instance.LevelUpPanelClose();
-        //AudioController.Instance.PlaySound(AudioController.Instance.selectUpgrade);
+        AudioController.Instance.PlaySound(AudioController.Instance.selectUpgrade);
     }
 }
