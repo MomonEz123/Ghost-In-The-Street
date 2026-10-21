@@ -1,25 +1,22 @@
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class EnemySpawner : MonoBehaviour
 {
     [System.Serializable]
     public class Wave
     {
-
         public GameObject enemyPrefab;
         public float spawnTimer;
         public float spawnInterval;
         public int enemiesPerWave;
         public int spawnedEnemyCount;
     }
-
     public List<Wave> waves;
     public int waveNumber;
     public Transform minPos;
     public Transform maxPos;
 
-    // Update is called once per frame
     void Update()
     {
         if (PlayerController.Instance.gameObject.activeSelf)
@@ -33,9 +30,9 @@ public class EnemySpawner : MonoBehaviour
             if (waves[waveNumber].spawnedEnemyCount >= waves[waveNumber].enemiesPerWave)
             {
                 waves[waveNumber].spawnedEnemyCount = 0;
-                if (waves[waveNumber].spawnedEnemyCount > 0.3)
+                if (waves[waveNumber].spawnInterval > 0.15f)
                 {
-                    waves[waveNumber].spawnInterval *= 0.9f;
+                    waves[waveNumber].spawnInterval *= 0.8f;
                 }
                 waveNumber++;
             }
@@ -55,7 +52,6 @@ public class EnemySpawner : MonoBehaviour
     private Vector2 RandomSpawnPoint()
     {
         Vector2 spawnPoint;
-
         if (Random.Range(0f, 1f) > 0.5)
         {
             spawnPoint.x = Random.Range(minPos.position.x, maxPos.position.x);
@@ -80,7 +76,6 @@ public class EnemySpawner : MonoBehaviour
                 spawnPoint.x = maxPos.position.x;
             }
         }
-
         return spawnPoint;
     }
 }

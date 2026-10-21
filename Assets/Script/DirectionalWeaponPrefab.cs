@@ -7,10 +7,18 @@ public class DirectionalWeaponPrefab : MonoBehaviour
     private Vector3 direction;
     private float duration;
 
+    // Centang jika sprite proyektil ingin diputar menghadap arah tembakan (sprite default menghadap kanan)
+    [SerializeField] private bool rotateToDirection = false;
+
     void Start()
     {
         weapon = GameObject.Find("Directional Weapon").GetComponent<DirectionalWeapon>();
-        direction = PlayerController.Instance.lastMoveDirection;
+        direction = GetMouseDirection();
+        if (rotateToDirection)
+        {
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0f, 0f, angle);
+        }
         duration = weapon.stats[weapon.weaponLevel].duration;
         rb = GetComponent<Rigidbody2D>();
         float randomAngle = Random.Range(-0.2f, 0.2f);
@@ -20,6 +28,24 @@ public class DirectionalWeaponPrefab : MonoBehaviour
         AudioController.Instance.PlaySound(AudioController.Instance.directionalWeaponSpawn);
     }
 
+
+    // Arah dari posisi tembak ke kursor mouse (world space)
+    private Vector3 GetMouseDirection()
+    {
+        Camera cam = Camera.main;
+        if (cam == null)
+            return PlayerController.Instance.lastMoveDirection;
+
+        Vector3 mouseWorld = cam.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 dir = mouseWorld - transform.position;
+        dir.z = 0f;
+
+        // Kursor tepat di atas player: pakai arah gerak terakhir
+        if (dir.sqrMagnitude < 0.0001f)
+            return PlayerController.Instance.lastMoveDirection;
+
+        return dir.normalized;
+    }
 
     void Update()
     {

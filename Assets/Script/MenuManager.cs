@@ -7,6 +7,10 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
+    public void OpenScore(){
+        SceneManager.LoadScene("Score");
+    }
+
     public void QuitGame(){
         Application.Quit();
     }

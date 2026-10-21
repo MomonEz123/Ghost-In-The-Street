@@ -7,6 +7,10 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public float gameTime;
     public bool gameActive;
+
+    // jumlah musuh yang dikalahkan di permainan ini, index = (int)EnemyType
+    [System.NonSerialized] public int[] killsPerType = new int[4];
+    private bool scoreSaved;
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -37,9 +41,23 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void AddKill(EnemyType type)
+    {
+        killsPerType[(int)type]++;
+    }
+
+    // simpan hasil permainan ke riwayat skor (hanya sekali per permainan)
+    private void SaveScore()
+    {
+        if (scoreSaved) return;
+        scoreSaved = true;
+        ScoreData.SaveRun(gameTime, killsPerType);
+    }
+
     public void GameOver()
     {
         gameActive = false;
+        SaveScore();
         StartCoroutine(ShowGameOverScreen());
     }
 
@@ -52,6 +70,8 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
+        SaveScore();
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Game");
     }
 
@@ -71,11 +91,13 @@ public class GameManager : MonoBehaviour
 
     public void QuitGame()
     {
+        SaveScore();
         Application.Quit();
     }
 
     public void GoToMainMenu()
     {
+        SaveScore();
         SceneManager.LoadScene("Main Menu");
         Time.timeScale = 1f;
     }

@@ -192,6 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 378afb7f9f6c8d54ca7d67abbb2725a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  enemyType: 1
   spriteRenderer: {fileID: 330856896455172828}
   rb: {fileID: 1618967940586806995}
   moveSpeed: 1.3
