@@ -32,14 +32,14 @@ public class UIControlller : MonoBehaviour
     {
         playerHealthSlider.maxValue = PlayerController.Instance.playerMaxHealth;
         playerHealthSlider.value = PlayerController.Instance.playerHealth;
-        healthText.text = playerHealthSlider.value + " / " + playerHealthSlider.maxValue;
+        healthText.text = "HP " + playerHealthSlider.value + " / " + playerHealthSlider.maxValue;
     }
 
     public void UpdateExperienceSlider()
     {
         playerExperienceSlider.maxValue = PlayerController.Instance.playerLevels[PlayerController.Instance.currentLevel - 1];
         playerExperienceSlider.value = PlayerController.Instance.experience;
-        experienceText.text = playerExperienceSlider.value + " / " + playerExperienceSlider.maxValue;
+        experienceText.text = "XP " + playerExperienceSlider.value + " / " + playerExperienceSlider.maxValue;
     }
 
     public void UpdateTimer(float timer)

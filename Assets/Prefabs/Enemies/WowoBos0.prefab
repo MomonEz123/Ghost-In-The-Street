@@ -132,10 +132,10 @@ MonoBehaviour:
   enemyType: 3
   spriteRenderer: {fileID: 3616511983590844941}
   rb: {fileID: 4359284247275821690}
-  moveSpeed: 0.5
+  moveSpeed: 0.6
   damage: 4
   health: 50
-  experienceToGive: 20
+  experienceToGive: 50
   pushTime: 0.1
   destroyEffect: {fileID: 1424440251661859640, guid: 1e9553bcf2f64c44795fb45b1be0a6bc, type: 3}
 --- !u!50 &4359284247275821690
